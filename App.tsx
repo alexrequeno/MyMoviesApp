@@ -13,7 +13,7 @@ import { NavigationContainer } from '@react-navigation/native'
 // } from 'react-native';
 
 //import {Colors} from 'react-native/Libraries/NewAppScreen';
-import { SplashScreen } from './src/screens/SplashScreen';
+import { MyStack } from './src/helpers/navigator';
 const App = () => {
   /* const isDarkMode = useColorScheme() === 'dark';
 
@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-        <SplashScreen />
+      <MyStack />
     </NavigationContainer>
     
   );

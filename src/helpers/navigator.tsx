@@ -1,5 +1,7 @@
+import React from 'react';
+
 import { createStackNavigator } from '@react-navigation/stack';
-import { DetailesMovieScreen } from '../screens/DetailsMovieScreen';
+import { DetailsMovieScreen } from '../screens/DetailsMovieScreen';
 import { HomeScreen } from '../screens/HomeScreen';
 import { LoginScreen } from '../screens/LoginScreen';
 import { SearchMovieScreen } from '../screens/SearchMoviesScreen';
@@ -7,16 +9,14 @@ import { SplashScreen } from '../screens/SplashScreen';
 
 const Stack = createStackNavigator();
 
-export const MyStack= () => {
+export const MyStack = () => {
     return (
+        
         <Stack.Navigator
-            initialRouteName='Home'
+            initialRouteName='Splash'
             screenOptions={{
-                headerMode: 'screen',
-                headerTintColor: 'white',
-                headerStyle: {
-                    backgroundColor: 'tomato'
-                }
+              headerShown: false,
+              
             }}
         >
             {/* Splash screen */}
@@ -29,7 +29,7 @@ export const MyStack= () => {
                 name='Login'
                 component={ LoginScreen }
             />
-            {/* Home screen as Main screen */}
+            {/* Home screen */}
             <Stack.Screen
                 name='Home'
                 component={ HomeScreen }
@@ -39,15 +39,15 @@ export const MyStack= () => {
              />
             {/* Movie Details screen */}
             <Stack.Screen
-            name='Details'
-            component={ DetailesMovieScreen }
+            name='DetailsMovie'
+            component={ DetailsMovieScreen }
             options={{
                 title: "Movie Details"
             }}
             />
-
+            {/* Search movie */}
             <Stack.Screen
-                name='Search'
+                name='SearchMovie'
                 component={ SearchMovieScreen }
                 options={{
                     title: "Buscar Pelicula..."

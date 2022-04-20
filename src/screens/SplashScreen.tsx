@@ -1,22 +1,24 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import LottieView from 'lottie-react-native';
+import { StackScreenProps } from '@react-navigation/stack';
 
-export const SplashScreen = () => {
+interface Props extends StackScreenProps<any, any>{};
+
+export const SplashScreen = ({navigation}: Props) => {
     return (
         <View style={styles.splash}>
             <LottieView 
                 source={require('../assets/animations/splash-screen-animation.json')}
                 autoPlay
-                loop
-                onAnimationFinish={() => {
-                    console.log('animation finished')
+                loop={false}
+                onAnimationFinish={ () => {
+                    navigation.navigate('Home'/* , { id: 11} */);
                 }}
             />
         </View>
     )
 }
-
 
 const styles = StyleSheet.create({
     splash: {
@@ -25,4 +27,3 @@ const styles = StyleSheet.create({
       margin: 0
     }
   });
-  
