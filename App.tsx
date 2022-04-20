@@ -7,10 +7,10 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  //useColorScheme,
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'
+// import {
+//   //useColorScheme,
+// } from 'react-native';
 
 //import {Colors} from 'react-native/Libraries/NewAppScreen';
 import { SplashScreen } from './src/screens/SplashScreen';
@@ -22,9 +22,10 @@ const App = () => {
   }; */
 
   return (
-    <SafeAreaView>
-      <SplashScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+        <SplashScreen />
+    </NavigationContainer>
+    
   );
 };
 
