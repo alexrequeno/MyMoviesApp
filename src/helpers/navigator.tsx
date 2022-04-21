@@ -16,7 +16,9 @@ export const MyStack = () => {
             initialRouteName='Splash'
             screenOptions={{
               headerShown: false,
-              
+              cardStyle: {
+                  backgroundColor: 'white'
+              }
             }}
         >
             {/* Splash screen */}
