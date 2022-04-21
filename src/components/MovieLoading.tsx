@@ -18,7 +18,7 @@ export const MovieLoading = () => {
 const styles = StyleSheet.create({
     splash: {
       flex: 1,
-      alighItems: 'center',
+      alingItems: 'center',
       margin: 0
     }
   });

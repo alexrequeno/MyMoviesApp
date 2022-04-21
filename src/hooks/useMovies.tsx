@@ -6,10 +6,10 @@ export const useMovies = () => {
 
     const [isLoading, setIsLoading] = useState(true);
 
-    const [popularMovies, setPopularMovies] = useState<Movies[]>([]);
+    const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
 
     const getMovies = async () => {
-        const response = await movieApi.get<Movie>('/popular');
+        const response = await movieApi.get<Movies>('/popular');
         setPopularMovies(response.data.results)
 
         setIsLoading(false);
