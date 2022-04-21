@@ -1,10 +1,21 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
 export const RelatedMovies = () => {
     return (
         <View>
-            <Text>Realted Movies</Text>
+            <Text style={styles.title}>Recomendaciones</Text>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        marginTop: 20
+    },
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'black'
+    }
+})
