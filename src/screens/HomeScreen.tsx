@@ -3,6 +3,7 @@ import React from 'react'
 import { View } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import HomeHeader from '../components/HomeHeader';
 import { MovieItemList } from '../components/MovieItemList';
 import { MovieLoading } from '../components/MovieLoading';
 import { TitleBar } from '../components/TitleBar';
@@ -25,11 +26,12 @@ export const HomeScreen = ({navigation/* , route */}: Props) => {
             <View style={{
                 marginTop: insets.top + 20
             }}>
-               <TitleBar 
-                    title='Peliculas Populares'
-               />
-               {/*  <Text style={styles.title}>
-                    {JSON.stringify(route.params, null, 3)}
+                <HomeHeader />
+                <TitleBar 
+                        title='Peliculas Populares'
+                />
+                {/*  <Text style={styles.title}>
+                        {JSON.stringify(route.params, null, 3)}
                 </Text> */}
                 <FlatList 
                     data={ popularMovies }

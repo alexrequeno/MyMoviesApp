@@ -23,7 +23,7 @@ export const TitleBar = ({title}: Props) => {
 
 const lstyles = StyleSheet.create({
     title: {
-        marginLeft:12
+        marginLeft: 12
     }
 })
 

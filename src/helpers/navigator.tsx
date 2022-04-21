@@ -6,8 +6,17 @@ import { HomeScreen } from '../screens/HomeScreen';
 import { LoginScreen } from '../screens/LoginScreen';
 import { SearchMovieScreen } from '../screens/SearchMoviesScreen';
 import { SplashScreen } from '../screens/SplashScreen';
+import { Movie } from '../interfaces/movie';
 
-const Stack = createStackNavigator();
+export type RootStackParams = {
+    Home: undefined
+    DetailsMovie: Movie
+    Splash: undefined
+    Login: undefined
+    SearchMovie: undefined
+}
+
+const Stack = createStackNavigator<RootStackParams>();
 
 export const MyStack = () => {
     return (

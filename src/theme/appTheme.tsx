@@ -5,5 +5,10 @@ export const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black'
+    },
+    homeTitle: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: 'black'
     }
 })
