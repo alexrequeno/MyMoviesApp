@@ -15,7 +15,7 @@ export const MovieItemList = ({ movie, navigation }: Props) => {
         <View style={styles.container}>
             <TouchableWithoutFeedback
                 onPress={() => {
-                    navigation.navigate('DetailsMovie', { id: movie.id, title: movie.title });
+                    navigation.navigate('DetailsMovie', movie);
                 }}
             >
                 <View style={styles.subContainer}>
@@ -50,12 +50,10 @@ export const MovieItemList = ({ movie, navigation }: Props) => {
                         </Text>
                     </View>
                 </View>
-
             </TouchableWithoutFeedback>
         </View>
-        
     )
-}
+};
 
 const styles = StyleSheet.create({
    container: {

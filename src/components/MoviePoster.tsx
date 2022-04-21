@@ -18,7 +18,7 @@ const MoviePoster = ({movie, height, width, navigation}:Props) => {
     return (
         <TouchableWithoutFeedback
             onPress={() => {
-                navigation.navigate('DetailsMovie', { id: movie.id });
+                navigation.navigate('DetailsMovie', movie);
             }}
         >
             <View style={styles.imageContainer}>

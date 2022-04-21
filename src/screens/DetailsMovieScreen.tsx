@@ -1,17 +1,16 @@
 import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
+import { Backdrop } from '../components/MovieDetails/Backdrop'
 import { RootStackParams } from '../helpers/navigator'
 
 interface Props extends StackScreenProps<RootStackParams, 'DetailsMovie'>{}
 
-export const DetailsMovieScreen = ({ navigation, route }: Props) => {
-    const movie = route.params;
+export const DetailsMovieScreen = ({ route }: Props) => {
     
     return (
         <View>
-            <Text>{ movie.title }</Text>
-           
+           <Backdrop route={route} />        
         </View>
     )
 }
