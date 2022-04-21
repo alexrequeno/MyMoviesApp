@@ -15,7 +15,7 @@ export const MovieItemList = ({ movie, navigation }: Props) => {
         <View style={styles.container}>
             <TouchableWithoutFeedback
                 onPress={() => {
-                    navigation.navigate('DetailsMovie', { id: movie.id });
+                    navigation.navigate('DetailsMovie', { id: movie.id, title: movie.title });
                 }}
             >
                 <View style={styles.subContainer}>

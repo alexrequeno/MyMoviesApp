@@ -10,7 +10,8 @@ export const DetailsMovieScreen = ({ navigation, route }: Props) => {
     
     return (
         <View>
-            <Text>Details Moview</Text>
+            <Text>{ movie.title }</Text>
+           
         </View>
     )
 }
