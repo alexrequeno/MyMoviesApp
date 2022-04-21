@@ -1,10 +1,14 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-export const Overview = () => {
+interface Props {
+    overview: string
+}
+
+export const Overview = ({overview}:Props) => {
     return (        
         <View>
-            <Text>Overview</Text>
+            <Text>{overview}</Text>
         </View>
     )
 }
