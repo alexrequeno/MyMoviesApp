@@ -8,22 +8,22 @@
 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native'
-// import {
-//   //useColorScheme,
-// } from 'react-native';
-
-//import {Colors} from 'react-native/Libraries/NewAppScreen';
 import { MyStack } from './src/helpers/navigator';
+import { AuthProvider } from './src/context/authContext';
+
+const AppState = ({children}: {children: JSX.Element | JSX.Element[]}) => {
+  return(
+    <AuthProvider>
+      {children}
+    </AuthProvider>
+  )
+}
 const App = () => {
-  /* const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  }; */
-
   return (
     <NavigationContainer>
-      <MyStack />
+      <AppState>
+        <MyStack />
+      </AppState>
     </NavigationContainer>
     
   );

@@ -14,6 +14,12 @@ interface Props extends StackScreenProps<any, any>{};
 export const HomeScreen = ({navigation/* , route */}: Props) => {
 
     const insets = useSafeAreaInsets();
+    const isLogged = false;
+
+    //verify user login
+    if (!isLogged){
+        navigation.navigate('Login');
+    }
 
     const { popularMovies, isLoading } = useMovies();
     if (isLoading){
@@ -21,6 +27,7 @@ export const HomeScreen = ({navigation/* , route */}: Props) => {
             <MovieLoading />
         )
     }
+
     else {
         return (
             <View style={{
