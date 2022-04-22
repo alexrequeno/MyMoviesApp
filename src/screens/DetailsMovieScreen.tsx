@@ -14,11 +14,11 @@ import { useMovieDetails } from '../hooks/useMovieDetails'
 
 interface Props extends StackScreenProps<RootStackParams, 'DetailsMovie'>{}
 
-export const DetailsMovieScreen = ({ route }: Props) => {
+export const DetailsMovieScreen = ({ route, navigation }: Props) => {
     
     const movie = route.params
     const imgUri = `${apiConf.movieImagesUrl}${movie.poster_path}`;  
-    const { isLoading, cast, movieFull } = useMovieDetails(movie.id)  
+    const { isLoading, cast, related } = useMovieDetails(movie.id)  
 
     if (isLoading){
         return <MovieLoading />;
@@ -31,7 +31,10 @@ export const DetailsMovieScreen = ({ route }: Props) => {
                 <Rating vote_average={movie.vote_average} /> 
                 <Overview overview={movie.overview} />
                 <Casting cast={cast} />
-                <RelatedMovies />
+                <RelatedMovies 
+                    related={related} 
+                    movie={movie} 
+                    navigation={navigation}                />
             </ScrollView>
         );
 

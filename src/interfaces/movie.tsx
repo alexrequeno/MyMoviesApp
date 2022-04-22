@@ -118,4 +118,3 @@ export enum Department {
     VisualEffects = "Visual Effects",
     Writing = "Writing",
 }
-'
