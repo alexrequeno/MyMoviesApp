@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StackScreenProps } from '@react-navigation/stack'
 import React, { useContext } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
@@ -19,12 +20,10 @@ export const HomeScreen = ({navigation/* , route */}: Props) => {
 
     const { popularMovies, isLoading } = useMovies();
 
-    const { logOut } = useContext(AuthContext);
-
-    const onLogout= () => {
-       logOut();
+    const onLogout= async () => {
+      await AsyncStorage.removeItem('token');
     }
-    
+
     if (isLoading){
     return (
             <MovieLoading />
