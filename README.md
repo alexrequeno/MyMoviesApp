@@ -28,6 +28,5 @@ Run on iOS:
 npx react-native run-ios
 ```
 ## Screenshots
-
-<img src="https://github.com/alexrequeno/MyMoviesApp/blob/main/src/assets/screenshots/busque.png" width="200" />
+<img src="https://github.com/alexrequeno/MyMoviesApp/blob/main/src/assets/screenshots/splash.png" width="200" /> <img src="https://github.com/alexrequeno/MyMoviesApp/blob/main/src/assets/screenshots/login.png" width="200" /> <img src="https://github.com/alexrequeno/MyMoviesApp/blob/main/src/assets/screenshots/home.png" width="200" /> <img src="https://github.com/alexrequeno/MyMoviesApp/blob/main/src/assets/screenshots/details1.png" width="200" /> <img src="https://github.com/alexrequeno/MyMoviesApp/blob/main/src/assets/screenshots/details2.png" width="200" /> <img src="https://github.com/alexrequeno/MyMoviesApp/blob/main/src/assets/screenshots/busque.png" width="200" />
 
