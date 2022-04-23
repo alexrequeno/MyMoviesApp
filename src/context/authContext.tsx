@@ -37,8 +37,8 @@ export const AuthProvider = ({children}: any) => {
         // No token, no autenticado
         if ( !token ) return dispatch({ type: 'authFail' });
     } */
-    const token = AsyncStorage.getItem('token');
-    console.log(token);
+    //const token = AsyncStorage.getItem('token');
+   // console.log(token);
     
 
     const signIn = async ({email, password}: LoginSender) => {

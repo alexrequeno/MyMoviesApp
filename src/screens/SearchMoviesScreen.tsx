@@ -15,6 +15,8 @@ export const SearchMovieScreen = ({ route, navigation }: Props) => {
     
     const searching = route.params;
     const {isLoading, foundMovies} = useSearchMovies(searching);
+    
+
     console.log(foundMovies);
     if (isLoading){
         return (

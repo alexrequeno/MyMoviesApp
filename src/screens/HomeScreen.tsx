@@ -1,12 +1,14 @@
 import { StackScreenProps } from '@react-navigation/stack'
-import React from 'react'
-import { View } from 'react-native'
+import React, { useContext } from 'react'
+import { Text, TouchableOpacity, View } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import HomeHeader from '../components/HomeHeader';
 import { MovieItemList } from '../components/MovieItemList';
 import { MovieLoading } from '../components/MovieLoading';
 import { TitleBar } from '../components/TitleBar';
+import { AuthContext } from '../context/authContext';
 import { useMovies } from '../hooks/useMovies';
 
 interface Props extends StackScreenProps<any, any>{};
@@ -16,6 +18,12 @@ export const HomeScreen = ({navigation/* , route */}: Props) => {
     const insets = useSafeAreaInsets();
 
     const { popularMovies, isLoading } = useMovies();
+
+    const { logOut } = useContext(AuthContext);
+
+    const onLogout= () => {
+       logOut();
+    }
     
     if (isLoading){
     return (
@@ -31,7 +39,27 @@ export const HomeScreen = ({navigation/* , route */}: Props) => {
                     
                 }}>
                     <HomeHeader />
-
+                    <TouchableOpacity
+                        onPress={ () => onLogout}
+                        style={{
+                            marginBottom:10,
+                            position: 'relative',
+                            justifyContent: 'flex-end',
+                            flexDirection: 'row',
+                            marginRight: 20
+                        }}
+                    >
+                        <Icon 
+                            name='logout'
+                            size={20}
+                            color="white"
+                        
+                        />
+                        <Text style={{
+                            color:'white',
+                           
+                        }}>Salir</Text>
+                    </TouchableOpacity>
                 </View>
                 <TitleBar 
                         title='Peliculas Populares'
