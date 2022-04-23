@@ -29,5 +29,5 @@ npx react-native run-ios
 ```
 ## Screenshots
 
-<img src="https://user-images.githubusercontent.com/33027382/88659555-710aea00-d0ff-11ea-952c-9c62a8b654b1.png" width="200" />
+<img src="https://github.com/alexrequeno/MyMoviesApp/blob/main/src/assets/screenshots/busque.png" width="200" />
 
