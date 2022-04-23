@@ -1,4 +1,3 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
 import { View } from 'react-native'
@@ -17,8 +16,6 @@ export const HomeScreen = ({navigation/* , route */}: Props) => {
     const insets = useSafeAreaInsets();
 
     const { popularMovies, isLoading } = useMovies();
-    const token = AsyncStorage.getItem('token');
-    console.log('token');
     
     if (isLoading){
     return (
@@ -27,9 +24,15 @@ export const HomeScreen = ({navigation/* , route */}: Props) => {
     }else {
         return (
             <View style={{
-                marginTop: insets.top + 20
+                marginTop: insets.top+5,
             }}>
-                <HomeHeader />
+                <View style= {{
+                    backgroundColor: '#333',
+                    
+                }}>
+                    <HomeHeader />
+
+                </View>
                 <TitleBar 
                         title='Peliculas Populares'
                 />

@@ -9,7 +9,28 @@ export const styles = StyleSheet.create({
     homeTitle: {
         fontSize: 25,
         fontWeight: 'bold',
-        color: 'black'
+        color: 'white'
+    },
+    inputSearch: {
+        fontSize: 14,
+        color: 'white',
+        width: '30%',
+        justifyContent: 'center',
+    },
+    searchHeader: {
+        position: 'absolute',
+        backgroundColor: '#333',
+        width: '100%',
+       height: '20%',
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        alignItems: 'center',
+        //padding: 100
+    },
+    containerGreyLogo: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        top: '30%'
     }
 });
 
@@ -37,7 +58,7 @@ export const loginStyle = StyleSheet.create({
     logoImg: {
         width: 100,
         height: 100,
-        marginTop: 35        
+        //marginTop: 35        
     },
     loginTitle: {
         color: 'white',
@@ -61,7 +82,7 @@ export const loginStyle = StyleSheet.create({
     },
     btnLogin: {
         borderWidth:2,
-        borderColor: 'blue',
+        borderColor: '#333',
         paddingHorizontal: 20,
         paddingVertical: 5,
         borderRadius: 100
