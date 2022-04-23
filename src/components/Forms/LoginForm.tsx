@@ -2,17 +2,17 @@ import React, { useContext, useEffect } from 'react'
 import { Alert, Keyboard, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { loginStyle } from '../../theme/appTheme'
 import { useForm } from '../../hooks/useForms';
-//import { StackScreenProps } from '@react-navigation/stack';
+import { StackScreenProps } from '@react-navigation/stack';
 import { AuthContext } from '../../context/authContext';
 
-//interface Props extends StackScreenProps<any, any>{};
+interface Props extends StackScreenProps<any, any>{};
 
-export const LoginForm = (/* { navigation }: Props */) => {
+export const LoginForm = ({ navigation }: Props) => {
 
     const { signIn, errorMessage, removeError } = useContext(AuthContext)
 
     const { email,  password, onChange } = useForm({
-        email: 'eve.hoyl@reqres.in',
+        email: 'eve.holt@reqres.in',
         password: 'cityslicka'
     });
 

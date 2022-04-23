@@ -9,6 +9,8 @@ import { SplashScreen } from '../screens/SplashScreen';
 
 import { Movie } from '../interfaces/movie';
 import { AuthContext } from '../context/authContext';
+import { MovieLoading } from '../components/MovieLoading';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export type RootStackParams = {
     Home: undefined
@@ -23,11 +25,13 @@ const Stack = createStackNavigator<RootStackParams>();
 export const MyStack = () => {
 
     const { status } = useContext( AuthContext );
+    const token =  AsyncStorage.getItem('token');
+    //
 
     return (
         
         <Stack.Navigator
-            initialRouteName='Splash'
+            //initialRouteName='Splash'
             screenOptions={{
               headerShown: false,
               cardStyle: {
@@ -36,7 +40,7 @@ export const MyStack = () => {
             }}
         >
             {
-                (status !== 'AUTH')
+                (token === null)
                 ? (
                     <>
                         {/* Splash screen */}

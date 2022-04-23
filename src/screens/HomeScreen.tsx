@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
 import { View } from 'react-native'
@@ -14,21 +15,16 @@ interface Props extends StackScreenProps<any, any>{};
 export const HomeScreen = ({navigation/* , route */}: Props) => {
 
     const insets = useSafeAreaInsets();
-    const isLogged = false;
-
-    //verify user login
-    if (!isLogged){
-        navigation.navigate('Login');
-    }
 
     const { popularMovies, isLoading } = useMovies();
+    const token = AsyncStorage.getItem('token');
+    console.log('token');
+    
     if (isLoading){
-        return (
+    return (
             <MovieLoading />
         )
-    }
-
-    else {
+    }else {
         return (
             <View style={{
                 marginTop: insets.top + 20
@@ -55,4 +51,6 @@ export const HomeScreen = ({navigation/* , route */}: Props) => {
         );
 
     }
+
+    
 };
