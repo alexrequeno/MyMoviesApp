@@ -1,5 +1,5 @@
 import { AxiosError } from "axios";
-import React,{ createContext, /* useEffect, */ useReducer } from "react";
+import React,{ createContext, useEffect, /* useEffect, */ useReducer } from "react";
 import authApi from "../api/authApi";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Login, LoginSender, User } from "../interfaces/user";
@@ -27,16 +27,16 @@ export const AuthContext = createContext({} as AuthCtxProps);
 export const AuthProvider = ({children}: any) => {
 
     const [state, dispatch] = useReducer(authReducer, authInitState);
-/* 
+ 
     useEffect(() => {
        verifyToken();
     }, []);
 
     const verifyToken = async () => {
+        const token = await AsyncStorage.getItem('token');
         
-        // No token, no autenticado
         if ( !token ) return dispatch({ type: 'authFail' });
-    } */
+    } 
     //const token = AsyncStorage.getItem('token');
    // console.log(token);
     

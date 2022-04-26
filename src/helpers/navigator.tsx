@@ -40,7 +40,7 @@ export const MyStack = () => {
             }}
         >
             {
-                (token === null)
+                (status !== 'AUTH')
                 ? (
                     <>
                         {/* Splash screen */}

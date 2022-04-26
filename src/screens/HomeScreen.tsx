@@ -19,9 +19,13 @@ export const HomeScreen = ({navigation/* , route */}: Props) => {
     const insets = useSafeAreaInsets();
 
     const { popularMovies, isLoading } = useMovies();
+    const { logOut } = useContext(AuthContext)
 
     const onLogout= async () => {
-      await AsyncStorage.removeItem('token');
+        //await AsyncStorage.removeItem('token');
+        logOut()
+        console.log('logout');
+      
     }
 
     if (isLoading){
@@ -39,7 +43,7 @@ export const HomeScreen = ({navigation/* , route */}: Props) => {
                 }}>
                     <HomeHeader />
                     <TouchableOpacity
-                        onPress={ () => onLogout}
+                        onPress={ () => onLogout()}
                         style={{
                             marginBottom:10,
                             position: 'relative',
